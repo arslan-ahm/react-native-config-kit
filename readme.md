@@ -17,19 +17,6 @@ ext {
     }
 ```
 
-- recheck proper code in `android/app/src/main/java/com/<app_name>/MainActivity.kt`
-
-```
-package com.personfinder
-
-import android.os.Bundle;
-import com.facebook.react.ReactActivity
-import com.facebook.react.ReactActivityDelegate
-import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
-import com.facebook.react.defaults.DefaultReactActivityDelegate
-import org.devio.rn.splashscreen.SplashScreen;
-```
-
 - In `android/gradle.properties` add following lines
 
 ```
@@ -53,4 +40,14 @@ android.enableJetifier=true
     "@react-native/metro-config": "0.76.6",
     "@react-native/typescript-config": "0.76.6",
 }
+```
+
+- Before `npx react-native run-android`, Clean graldew by running following in terminal:
+```
+cd android
+gradlew clean (in Powershell) 
+(OR ./gradlew clean in Terminal)
+
+cd ..
+npx react-native run-android
 ```
